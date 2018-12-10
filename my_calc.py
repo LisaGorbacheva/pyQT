@@ -29,10 +29,29 @@ class MyWidget(QMainWindow):
         self.pushButton_fact.clicked.connect(self.fact)
         self.pushButton_st.clicked.connect(self.calc)
         self.pushButton_result.clicked.connect(self.result)
+        self.ButtonIMT.clicked.connect(self.imt)
 
 
         self.data = ''
         self.data_eval = ''
+
+
+    def imt(self,n):
+        ves,rost = float(self.lineVES.text()),float(self.lineROST.text())
+        imt = ves/((rost/100)**2)
+        self.lcdNumber.display(imt)
+        if imt > 40:
+            self.log.setText("Ожирение третьей степени (морбидное)")
+        elif 35 <= imt <= 40:
+            self.log.setText("Ожирение второй степени")
+        elif 30 <= imt <= 35:
+            self.log.setText("Ожирение первой степени")
+        elif 25 <= imt <= 30:
+            self.log.setText(" Избыточная масса тела(предожирение)")
+        elif 18.5 <= imt <= 25:
+             self.log.setText("Норма")
+        elif 16 <= imt <= 18.5:
+            self.log.setText("Недостаточная (дефицит) масса тела")
 
 
     def real_fact(self,n):
