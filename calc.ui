@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>878</width>
-    <height>483</height>
+    <width>870</width>
+    <height>631</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -357,6 +357,13 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="ButtonIMT_2">
+       <property name="text">
+        <string>Открыть рекомендации</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
   </widget>
@@ -365,7 +372,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>878</width>
+     <width>870</width>
      <height>21</height>
     </rect>
    </property>

@@ -2,7 +2,7 @@ import sys
 import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
-
+import webbrowser
 
 class MyWidget(QMainWindow):
     def __init__(self):
@@ -30,6 +30,7 @@ class MyWidget(QMainWindow):
         self.pushButton_st.clicked.connect(self.calc)
         self.pushButton_result.clicked.connect(self.result)
         self.ButtonIMT.clicked.connect(self.imt)
+        self.ButtonIMT_2.clicked.connect(self.imt2)
 
 
         self.data = ''
@@ -53,6 +54,8 @@ class MyWidget(QMainWindow):
         elif 16 <= imt <= 18.5:
             self.log.setText("Недостаточная (дефицит) масса тела")
 
+    def imt2(self):
+        webbrowser.open("https://meddocs.info/chapter/indeks_massi_tela", new=0, autoraise=True)
 
     def real_fact(self,n):
         if n < 0:
